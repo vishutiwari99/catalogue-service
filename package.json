@@ -1,7 +1,7 @@
 {
-  "name": "auth-service",
+  "name": "catalogue-service",
   "version": "1.0.0",
-  "description": "User Management Service",
+  "description": "A Catalogue Management Service",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@types/config": "^3.3.5",
     "@types/express": "^5.0.0",
     "@types/http-errors": "^2.0.4",
     "@types/jest": "^29.5.14",
@@ -37,9 +38,11 @@
   },
   "dependencies": {
     "@types/supertest": "^6.0.2",
+    "config": "^4.0.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "http-errors": "^2.0.0",
+    "js-yaml": "^4.1.0",
     "lint-staged": "^15.5.0",
     "winston": "^3.17.0"
   },

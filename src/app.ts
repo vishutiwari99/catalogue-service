@@ -1,10 +1,13 @@
 import express, { NextFunction, Request, Response } from "express";
 import logger from "./config/logger";
 import { HttpError } from "http-errors";
+import config from "config";
 
 const app = express();
 app.get("/", (req, res, next: NextFunction) => {
-  res.status(200).send("Hello World!");
+  res.json({
+    message: config.get("server.port"),
+  });
   next();
 });
 

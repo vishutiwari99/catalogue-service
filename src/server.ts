@@ -1,8 +1,8 @@
 import app from "./app";
-import { Config } from "./config";
+import config from "config";
 import logger from "./config/logger";
 const startServer = () => {
-  const PORT = Config.PORT;
+  const PORT: number = config.get("server.port") || 5502;
   try {
     // eslint-disable-next-line no-console
     app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));
