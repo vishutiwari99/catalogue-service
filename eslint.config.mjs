@@ -37,5 +37,5 @@ export default tseslint.config(
       "dot-notation": "warn",
       "@typescript-eslint/no-misused-promises": "off",
     },
-  },
+  }
 );
