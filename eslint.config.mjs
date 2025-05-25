@@ -7,7 +7,12 @@ export default tseslint.config(
   tseslint.configs.stylistic,
   tseslint.configs.recommendedTypeChecked,
   {
-    ignores: ["dist", "node_modules", "eslint.config.mjs"],
+    ignores: [
+      "dist",
+      "node_modules",
+      "eslint.config.mjs",
+      "commitlint.config.mjs",
+    ],
   },
   {
     languageOptions: {
@@ -32,5 +37,5 @@ export default tseslint.config(
       "dot-notation": "warn",
       "@typescript-eslint/no-misused-promises": "off",
     },
-  },
+  }
 );
