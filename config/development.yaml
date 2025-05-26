@@ -2,4 +2,4 @@ server:
   port: 5502
   host: localhost
 database:
-  url: mongodb://admin:secret@localhost:27017/catalogue-service?authSource=admin&w=1
+  url: mongodb://admin:secret@localhost:27017/catalogue_db?authSource=admin&w=1

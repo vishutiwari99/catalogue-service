@@ -1,14 +1,18 @@
 import express, { NextFunction, Request, Response } from "express";
 import logger from "./config/logger";
 import { HttpError } from "http-errors";
+import categoryRouter from "./category/category-router";
 
 const app = express();
+app.use(express.json());
 app.get("/", (req, res, next: NextFunction) => {
   res.json({
     message: "Hello from Catalogue Service!",
   });
   next();
 });
+
+app.use("/categories", categoryRouter);
 
 // global error handler
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

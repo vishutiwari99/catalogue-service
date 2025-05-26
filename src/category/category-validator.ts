@@ -19,6 +19,11 @@ export default [
           `${value} is invalid attribute for priceType field.Possibile values are ${validKeys.join(", ")}`,
         );
       }
+      return true;
     }),
-  body("attributes").exists().withMessage("Attributes field is required"),
+  body("attributes")
+    .exists()
+    .withMessage("Attributes field is required")
+    .isArray()
+    .withMessage("Attributes must be an array"),
 ];
