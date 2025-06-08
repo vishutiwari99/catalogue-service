@@ -2,6 +2,7 @@ import express, { NextFunction } from "express";
 import categoryRouter from "./category/category-router";
 import { globalErrorHandler } from "./common/middlewares/globalErrorHandler";
 import cookieParser from "cookie-parser";
+import productsRouter from "./product/product-router";
 
 const app = express();
 app.use(cookieParser());
@@ -14,6 +15,7 @@ app.get("/", (req, res, next: NextFunction) => {
 });
 
 app.use("/categories", categoryRouter);
+app.use("/products", productsRouter);
 
 // global error handler
 
