@@ -22,4 +22,26 @@ categoryRouter.post(
   asyncHandlerWrapper(categoryController.create),
 );
 
+categoryRouter.put(
+  "/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  asyncHandlerWrapper(categoryController.update),
+);
+
+// eslint-disable-next-line @typescript-eslint/unbound-method
+categoryRouter.get("/:id", asyncHandlerWrapper(categoryController.getById));
+
+// eslint-disable-next-line @typescript-eslint/unbound-method
+categoryRouter.get("/", asyncHandlerWrapper(categoryController.getAll));
+
+categoryRouter.delete(
+  "/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  asyncHandlerWrapper(categoryController.remove),
+);
+
 export default categoryRouter;
